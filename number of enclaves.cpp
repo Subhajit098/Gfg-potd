@@ -13,7 +13,7 @@ class Solution{
           int new_i=i+row_dir[k];
           int new_j=j+col_dir[k];
           
-          if(new_i>=0 and new_j>=0 and new_i<row and new_j<col and grid[new_i][new_j]==0){
+          if(new_i>=0 and new_j>=0 and new_i<row and new_j<col and grid[new_i][new_j]==1){
             make_zeros(new_i,new_j,row,col,grid);  
           }
       }
