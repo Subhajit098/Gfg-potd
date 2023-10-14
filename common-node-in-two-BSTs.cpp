@@ -8,8 +8,8 @@ using namespace std;
 void traversal(Node* root,map<int,int>&mp){
         if(!root) return;
         
-        mp[root->data]++;
         traversal(root->left,mp);
+        mp[root->data]++;
         traversal(root->right,mp);
     }
     
@@ -20,6 +20,7 @@ void traversal(Node* root,map<int,int>&mp){
      traversal(root1,mp);
      traversal(root2,mp);
      vector<int>ans;
+     if(!root1 || !root2) return ans;
      for(auto it:mp){
          if(it.second>1) ans.push_back(it.first);
      }
