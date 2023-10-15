@@ -17,4 +17,4 @@ pair<bool, int>solve(Node* root)
     bool isBalanced(Node *root)
     {
         return solve(root).first;
-    }
+    }
