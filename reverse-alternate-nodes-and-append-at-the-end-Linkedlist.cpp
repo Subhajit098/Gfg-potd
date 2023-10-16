@@ -31,3 +31,35 @@ struct Node* reverse(struct Node* head)
         struct Node* newevenhead = reverse(evenhead);
         temp->next = newevenhead;
     }
+
+
+    // Alternate method type :
+    struct Node *reverse(struct Node* node){
+        struct Node * prev=NULL;
+        struct Node * start=node;
+        while(start!=NULL){
+            struct Node * forward=start->next;
+            start->next=prev;
+            prev=start;
+            start=forward;
+        }
+        return prev;
+    }
+    
+    void rearrange(struct Node *odd)
+    {
+        //add code here
+        struct Node * head=odd;
+        struct Node * start=odd->next;
+        struct Node * dummy=start;
+        while(head->next!=NULL and head->next->next!=NULL){
+            head->next=head->next->next;
+            head=head->next;
+            start->next=head->next;
+            if(start->next!=NULL) start=start->next;
+        }
+        
+        struct Node * reversed = reverse(dummy);
+        
+        head->next=reversed;
+    }
