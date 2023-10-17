@@ -22,3 +22,17 @@ Node* pairWiseSwap(struct Node* head)
         }
         return second;
     }
+
+
+    // recursion approach 
+    Node* pairWiseSwap(struct Node* head) 
+    {
+        // The task is to complete this method
+        if(!head || !head->next) return head;
+        
+        
+        Node* temp=head->next;
+        head->next=pairWiseSwap(head->next->next);
+        temp->next=head;
+        return temp;
+    }
