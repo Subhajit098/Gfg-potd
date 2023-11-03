@@ -31,6 +31,8 @@ int pythagorean(int a,int b,int c){
 
 
  // Optimal Approach 
+//  TC: O(n)+O(n*n)
+// SC: O(n)
  bool check_squared_triplets(int arr[],int n){
     for(int i=0;i<n;i++){
         arr[i]*=arr[i];
