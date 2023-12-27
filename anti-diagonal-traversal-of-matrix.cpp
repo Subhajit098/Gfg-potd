@@ -5,7 +5,6 @@ vector<int> antiDiagonalPattern(vector<vector<int>> matrix)
     {
         // Code here
         int size=matrix.size();
-        int length=(2*size-1)-2;
         vector<int>ans;
         if(size==0) return ans;
         ans.push_back(matrix[0][0]);
