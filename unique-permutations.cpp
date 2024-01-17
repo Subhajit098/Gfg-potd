@@ -1,3 +1,7 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+
 void helper(int ind,vector<int> &arr,vector<vector<int>>&ans){
         if(ind==arr.size()-1){
             ans.push_back(arr);
