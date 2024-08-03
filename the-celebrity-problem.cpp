@@ -24,7 +24,10 @@ int celebrity(vector<vector<int>> &mat)
     for (int i = 0; i < n; i++)
     {
         if (knows_me[i] == n - 1 && i_know[i] == 0)
+        {
             celebrity = i;
+            break; // as there can only be 1 celebrity.
+        }
     }
 
     return celebrity;
@@ -55,6 +58,7 @@ int celebrity(vector<vector<int>> &mat)
 
         if (sum == 0)
             celebrity = i;
+        break;
     }
 
     return celebrity;
