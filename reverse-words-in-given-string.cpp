@@ -1,30 +1,25 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-static bool cmp(int a, int b)
+string reverseWords(string str)
 {
-    string sa = to_string(a), sb = to_string(b);
-
-    if ((sa + sb) > (sb + sa))
-        return true;
-
-    return false;
-}
-
-string largestNumber(vector<int> &nums)
-{
-    sort(nums.begin(), nums.end(), cmp);
-
-    if (nums[0] == 0)
-        return "0";
-
-    string ans = "";
-    for (int i : nums)
+    // code here
+    int n = str.size();
+    int i = 0;
+    while (i < n)
     {
-        ans += to_string(i);
+
+        int j = i;
+        while (j < n && str[j] != '.')
+            j++;
+
+        reverse(str.begin() + i, str.begin() + j);
+        i = j + 1;
     }
 
-    return ans;
+    reverse(str.begin(), str.end());
+
+    return str;
 }
 
 int main()
